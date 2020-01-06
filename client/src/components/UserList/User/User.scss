@@ -1,0 +1,15 @@
+.user {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  &__avatar {
+    height: 20%;
+    width: 20%;
+    margin-right: 10px;
+  }
+
+  &__status {
+    color: #1be92c;
+  }
+}

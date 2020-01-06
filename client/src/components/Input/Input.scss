@@ -1,0 +1,16 @@
+.chat-form {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+
+  &__input {
+    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    font: 14px/22px 'Lato', Arial, sans-serif;
+    border-radius: 5px;
+    resize: none;
+    background: #474b52;
+    color: #ffffff;
+  }
+}

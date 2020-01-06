@@ -1,0 +1,18 @@
+.user-list {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__users {
+    padding: 20px;
+    height: 770px;
+  }
+
+  &__count {
+    padding: 20px;
+    text-align: center;
+    background-color: #2e3136;
+    border-bottom: 2px solid #26282d;
+  }
+}

@@ -1,0 +1,18 @@
+.chat-container {
+  background: #2e3136;
+  border-radius: 5px;
+  display: flex;
+  width: 1000px;
+}
+
+.chat {
+  width: 100%;
+  background: #36393e;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,0 +1,32 @@
+.info-bar {
+  padding: 15px 25px;
+  border-bottom: 2px solid #26282d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__room-name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &__invite-btn {
+    background: #00a8ff;
+    border: 0;
+    width: 125px;
+    height: 30px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: darken(#00a8ff, 15%);
+    }
+
+    i {
+      margin-left: 6px;
+    }
+  }
+}
