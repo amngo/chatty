@@ -18,12 +18,12 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'localhost:5000';
+  // const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
     const { name, room, color } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+    socket = io();
 
     setRoom(room);
     setName(name);
@@ -34,7 +34,7 @@ const Chat = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [location.search]);
 
   useEffect(() => {
     socket.on('message', message => {
