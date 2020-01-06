@@ -4,8 +4,8 @@
   "description": "Back end for handling chat messages.",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
+    "start": "node index.js",
+    "server": "nodemon index.js",
     "client": "yarn --cwd ./client start",
     "install-client": "yarn --cwd ./client",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
