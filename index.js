@@ -7,16 +7,16 @@ const moment = require('moment');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
-const router = require('./router');
-
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
 app.use(cors());
-// app.use(router);
 
 if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+  
   app.use('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
