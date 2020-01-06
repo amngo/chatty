@@ -14,7 +14,13 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 app.use(cors());
-app.use(router);
+// app.use(router);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 io.on('connect', socket => {
   socket.on('join', ({ name, room, color }, callback) => {
@@ -77,12 +83,6 @@ io.on('connect', socket => {
     }
   });
 });
-
-if (process.env.NODE_ENV === 'production') {
-  app.use('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 server.listen(process.env.PORT || 5000, () =>
   console.log(`Server has started.`)
