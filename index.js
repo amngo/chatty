@@ -16,7 +16,7 @@ app.use(cors());
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'));
-  
+
   app.use('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
@@ -84,6 +84,6 @@ io.on('connect', socket => {
   });
 });
 
-server.listen(process.env.PORT || 5000, () =>
-  console.log(`Server has started.`)
-);
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
