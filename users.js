@@ -12,8 +12,6 @@ const addUser = ({ id, name, room, color }) => {
   if (!name || !room) return { error: 'Username and room are required.' };
   if (existingUser) return { error: 'Username is taken.' };
 
-  name = name.charAt(0).toUpperCase() + name.slice(1);
-
   const user = { id, name, room, color };
 
   users.push(user);

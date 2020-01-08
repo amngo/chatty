@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import { withRouter } from 'react-router-dom';
 
 import UserList from '../UserList/UserList';
 import Messages from '../Messages/Messages';
 import Input from '../Input/Input';
 import InfoBar from '../InfoBar/InfoBar';
+import Transition from '../Transition/Transition';
 
 import './Chat.scss';
 
 let socket;
 
-const Chat = ({ location }) => {
+const Chat = ({ location, history }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [color, setColor] = useState('');
@@ -32,9 +34,12 @@ const Chat = ({ location }) => {
     socket.emit('join', { name, room, color }, error => {
       if (error) {
         alert(error);
+        history.push('/');
       }
     });
-  }, [location.search]);
+
+    // return () => disconnectSocket(socket);
+  }, [location.search, history]);
 
   useEffect(() => {
     socket.on('message', message => {
@@ -59,20 +64,30 @@ const Chat = ({ location }) => {
     }
   };
 
+  const disconnectSocket = socket => {
+    socket.emit('disconnect');
+    socket.close();
+  };
+
   return (
-    <div className="chat-container">
-      <UserList users={users} />
-      <div className="chat">
-        <InfoBar room={room} />
-        <Messages messages={messages} name={name} />
-        <Input
-          message={message}
-          setMessage={setMessage}
-          sendMessage={sendMessage}
-        />
-      </div>  
-    </div>
+    <Transition show={true}>
+      <div className="chat-container">
+        <UserList users={users} />
+        <div className="chat">
+          <InfoBar
+            room={room}
+            disconnectSocket={() => disconnectSocket(socket)}
+          />
+          <Messages messages={messages} name={name} />
+          <Input
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </div>
+      </div>
+    </Transition>
   );
 };
 
-export default Chat;
+export default withRouter(Chat);

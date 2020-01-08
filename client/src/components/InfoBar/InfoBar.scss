@@ -10,8 +10,7 @@
     font-size: 16px;
   }
 
-  &__invite-btn {
-    background: #00a8ff;
+  &__btn {
     border: 0;
     width: 125px;
     height: 30px;
@@ -21,12 +20,23 @@
     cursor: pointer;
     transition: 0.2s;
 
-    &:hover {
-      background: darken(#00a8ff, 15%);
-    }
-
     i {
       margin-left: 6px;
+    }
+
+    &--invite {
+      background: #00a8ff;
+      margin-right: 16px;
+      &:hover {
+      background: darken(#00a8ff, 15%);
+    }
+    }
+
+    &--leave {
+      background: #e84118;
+      &:hover {
+      background: darken(#e84118, 15%);
+    }
     }
   }
 }

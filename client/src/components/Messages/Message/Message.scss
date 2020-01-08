@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  animation: slideInLeft 0.2s;
 
   &__data {
     margin-bottom: 5px;
@@ -14,6 +15,7 @@
 
 .message-other {
   display: flex;
+  animation: slideInRight 0.2s;
 
   &__avatar {
     height: 32px;
@@ -36,12 +38,16 @@
 }
 
 .message-admin {
-  &__text.text {
+  &__text {
     color: #f6e58d;
     font-weight: bold;
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 }
 
 .name {
   font-weight: bold;
+  text-transform: capitalize;
 }

@@ -42,7 +42,9 @@ const Message = ({ message: { text, user, date, color }, name }) => {
           <span className="message-other__name name">{user}</span>
           <span className="message-other__time time ml-1">{date}</span>
         </div>
-        <div className="message_other__text text">{text}</div>
+        <div className="message_other__text text">
+          {text}
+        </div>
       </div>
     </div>
   );

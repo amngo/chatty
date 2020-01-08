@@ -3,6 +3,10 @@
   display: flex;
   align-items: center;
 
+  &__name {
+    text-transform: capitalize;
+  }
+
   &__avatar {
     height: 20%;
     width: 20%;
