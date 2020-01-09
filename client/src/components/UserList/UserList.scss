@@ -1,5 +1,5 @@
 .user-list {
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,10 +9,8 @@
     height: 100%;
   }
 
-  &__count {
-    font-size: 1.6rem;
-    color: white;
-    padding: 2rem;
+  &__search {
+    padding: 2.1rem;
     text-align: center;
     background-color: #242A31;
     border-bottom: 1px solid #3D434A;

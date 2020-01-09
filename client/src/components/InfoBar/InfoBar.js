@@ -1,9 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 import './InfoBar.scss';
 
-const InfoBar = ({ room, history, disconnectSocket }) => (
+const InfoBar = ({ room, disconnectSocket }) => (
   <div className="info-bar">
     <div className="info-bar__room-name">{room}</div>
     <div className="info-bar__btn-group">
@@ -15,10 +14,7 @@ const InfoBar = ({ room, history, disconnectSocket }) => (
       </button>
       <button
         className="info-bar__btn info-bar__btn--leave"
-        onClick={() => {
-          disconnectSocket();
-          history.push('/');
-        }}
+        onClick={() => disconnectSocket()}
       >
         Leave Room
       </button>
@@ -26,4 +22,4 @@ const InfoBar = ({ room, history, disconnectSocket }) => (
   </div>
 );
 
-export default withRouter(InfoBar);
+export default InfoBar;

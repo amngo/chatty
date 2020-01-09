@@ -20,12 +20,12 @@ const Chat = ({ location, history }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'localhost:5000';
+  const [show, setShow] = useState(true);
+  // const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
     const { name, room, color } = queryString.parse(location.search);
-
-    socket = io(ENDPOINT);
+    socket = io();
 
     setRoom(room);
     setName(name);
@@ -38,7 +38,6 @@ const Chat = ({ location, history }) => {
       }
     });
 
-    // return () => disconnectSocket(socket);
   }, [location.search, history]);
 
   useEffect(() => {
@@ -67,10 +66,11 @@ const Chat = ({ location, history }) => {
   const disconnectSocket = socket => {
     socket.emit('disconnect');
     socket.close();
+    setShow(false);
   };
 
   return (
-    <Transition show={true}>
+    <Transition show={show} url={'/'}>
       <div className="chat-container">
         <UserList users={users} />
         <div className="chat">

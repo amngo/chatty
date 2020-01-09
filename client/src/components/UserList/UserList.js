@@ -2,16 +2,21 @@ import React from 'react';
 import User from './User/User';
 
 import './UserList.scss';
+import SearchBar from '../SearchBar/SearchBar';
 
-const UserList = ({ users }) => (
-  <div className="user-list">
-    <div className="user-list__count">
-      <div>{users.length} users in this room</div>
-    </div>
-    <ul className="user-list__users">
-      {users ? users.map((user, i) => <User key={i} {...user} />) : null}
+const UserList = ({ users }) => {
+  return (
+    <ul className="user-list">
+      <div className="user-list__search">
+        <SearchBar />
+      </div>
+      <ul className="user-list__users">
+        {users
+          ? users.map((user, i) => <User key={i} {...user} />)
+          : null}
+      </ul>
     </ul>
-  </div>
-);
+  );
+};
 
 export default UserList;
