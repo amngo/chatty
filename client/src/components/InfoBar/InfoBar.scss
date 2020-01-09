@@ -1,22 +1,22 @@
 .info-bar {
-  padding: 15px 25px;
-  border-bottom: 2px solid #26282d;
+  padding: 2rem;
+  border-bottom: 1px solid #d3d6d8;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &__room-name {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   &__btn {
     border: 0;
-    width: 125px;
-    height: 30px;
+    width: 12.5rem;
+    height: 3rem;
     border-radius: 3px;
     color: #fff;
-    font-size: 12px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: 0.2s;
 
@@ -26,17 +26,17 @@
 
     &--invite {
       background: #00a8ff;
-      margin-right: 16px;
+      margin-right: 1.6rem;
       &:hover {
-      background: darken(#00a8ff, 15%);
-    }
+        background: darken(#00a8ff, 15%);
+      }
     }
 
     &--leave {
       background: #e84118;
       &:hover {
-      background: darken(#e84118, 15%);
-    }
+        background: darken(#e84118, 15%);
+      }
     }
   }
 }

@@ -1,18 +1,20 @@
 .user-list {
-  width: 30%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
   &__users {
-    padding: 20px;
-    height: 770px;
+    padding: 2rem;
+    height: 100%;
   }
 
   &__count {
-    padding: 20px;
+    font-size: 1.6rem;
+    color: white;
+    padding: 2rem;
     text-align: center;
-    background-color: #2e3136;
-    border-bottom: 2px solid #26282d;
+    background-color: #242A31;
+    border-bottom: 1px solid #3D434A;
   }
 }

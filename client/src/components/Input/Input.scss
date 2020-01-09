@@ -1,16 +1,38 @@
 .chat-form {
-  padding: 30px;
   flex: 1;
   display: flex;
+  border-top: 1px solid #d3d6d8;
+  background: #fbfcfc;
+  align-items: center;
+  padding: 2rem 3rem;
 
   &__input {
     width: 100%;
     border: none;
-    padding: 10px 20px;
-    font: 14px/22px 'Lato', Arial, sans-serif;
     border-radius: 5px;
-    resize: none;
-    background: #474b52;
-    color: #ffffff;
+    background: #fbfcfc;
+    color: #616d7a;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+
+  &__send {
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: inherit;
+
+    &-icon {
+      font-size: 1.6rem;
+      padding: 1.2rem;
+      background: #616d7a;
+      color: #fbfcfc;
+      border-radius: 50%;
+      vertical-align: middle;
+      text-align: center;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

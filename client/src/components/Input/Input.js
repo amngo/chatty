@@ -4,7 +4,7 @@ import './Input.scss';
 
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="chat-form">
-    <textarea
+    <input
       className="chat-form__input"
       type="text"
       placeholder="Type a message..."
@@ -12,6 +12,9 @@ const Input = ({ setMessage, sendMessage, message }) => (
       onChange={({ target: { value } }) => setMessage(value)}
       onKeyPress={event => (event.key === 'Enter' ? sendMessage(event) : null)}
     />
+    <button className="chat-form__send" onClick={event => sendMessage(event)}>
+      <i className="chat-form__send-icon fas fa-paper-plane"></i>
+    </button>
   </form>
 );
 

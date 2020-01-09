@@ -3,7 +3,7 @@ import Chat from './components/Chat/Chat';
 import Join from './components/Join/Join';
 import { Route } from 'react-router-dom';
 
-import 'animate.css';
+import 'animate.css/animate.min.css'
 import './App.scss';
 
 const App = () => {

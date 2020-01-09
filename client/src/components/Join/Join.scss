@@ -1,24 +1,26 @@
 .join {
   background: #2e3136;
-  padding: 64px;
+  padding: 6rem;
   border-radius: 5px;
   display: flex;
 
   &__message {
-    margin-bottom: 16px;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: white;
   }
 
   &__color-picker {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 64px;
+    margin-left: 6rem;
   }
 
   &__avatar {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 16px;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 2rem;
   }
 
   &__form {
@@ -29,25 +31,25 @@
   }
 
   &__input {
-    width: 350px;
-    padding: 20px 0px;
+    width: 35rem;
+    padding: 2rem 0;
     background: transparent;
     border: 0;
     border-bottom: 1px solid #435160;
     outline: none;
     color: #6d7781;
-    font-size: 16px;
+    font-size: 1.5rem;
   }
 
   &__btn {
-    margin-top: 16px;
+    margin-top: 2rem;
     background: #1fce6d;
     border: 0;
-    width: 350px;
-    height: 40px;
+    width: 35rem;
+    height: 4rem;
     border-radius: 3px;
     color: #fff;
-    font-size: 12px;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: 0.2s;
 

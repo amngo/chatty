@@ -13,22 +13,24 @@ const Message = ({ message: { text, user, date, color }, name }) => {
 
   if (user.toLowerCase() === 'admin') {
     return (
-      <div>
-        <div className="message-admin">
-          <span className="message-admin__time time">{date}</span>
-        </div>
-        <div className="message-admin__text text">{text}</div>
+      <div className="message-admin">
+        <div className="message-admin__text">{text}</div>
+        <div className="message-admin__time time">{date}</div>
       </div>
     );
   }
 
   return isSentByCurrentUser ? (
     <div className="message-me">
-      <div className="message-me__data">
-        <span className="message-me__time time">{date}</span> &nbsp; &nbsp;
-        <span className="message-me__name name">Me</span>
+      <img
+        className="message-me__avatar"
+        src={`https://ui-avatars.com/api/?name=${user}&background=${color}&color=fff&rounded=true`}
+        alt="avatar"
+      />
+      <div className="message-me__content">
+        <div className="message-me__text text">{text}</div>
+        <div className="message_other__time time">{date}</div>
       </div>
-      <div className="message-me__text text">{text}</div>
     </div>
   ) : (
     <div className="message-other">
@@ -38,13 +40,8 @@ const Message = ({ message: { text, user, date, color }, name }) => {
         alt="avatar"
       />
       <div className="message-other__content">
-        <div className="message-other__data">
-          <span className="message-other__name name">{user}</span>
-          <span className="message-other__time time ml-1">{date}</span>
-        </div>
-        <div className="message_other__text text">
-          {text}
-        </div>
+        <div className="message-other__text text">{text}</div>
+        <div className="message_other__time time">{date}</div>
       </div>
     </div>
   );
