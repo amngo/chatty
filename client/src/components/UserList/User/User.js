@@ -12,9 +12,7 @@ const User = ({ name, color }) => {
       />
       <div className="user__info">
         <div className="user__name">{name}</div>
-        <div className="user__status">
-          <i className="fa fa-circle user__online"></i> online
-        </div>
+        <div className="user__status">online</div>
       </div>
     </li>
   );

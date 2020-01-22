@@ -21,11 +21,12 @@ const Chat = ({ location, history }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [show, setShow] = useState(true);
-  // const ENDPOINT = 'localhost:5000';
+  const ENDPOINT =
+    process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : '';
 
   useEffect(() => {
     const { name, room, color } = queryString.parse(location.search);
-    socket = io();
+    socket = io(ENDPOINT);
 
     setRoom(room);
     setName(name);
@@ -37,7 +38,6 @@ const Chat = ({ location, history }) => {
         history.push('/');
       }
     });
-
   }, [location.search, history]);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Chat = ({ location, history }) => {
       socket.emit('disconnect');
       socket.off();
     };
-  }, [messages]);
+  }, [messages, ENDPOINT]);
 
   const sendMessage = event => {
     event.preventDefault();
