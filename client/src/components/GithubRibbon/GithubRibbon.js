@@ -4,7 +4,7 @@ import './GithubRibbon.scss';
 const GithubRibbon = () => {
   return (
     <a
-      href="https://your-url"
+      href="https://github.com/amngo/chatty"
       className="github-corner"
       aria-label="View source on GitHub"
     >
